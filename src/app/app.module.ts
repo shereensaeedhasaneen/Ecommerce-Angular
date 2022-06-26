@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +16,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    CoreModule
 
   ],
   providers: [],
