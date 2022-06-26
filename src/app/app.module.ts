@@ -5,9 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
-  MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
-  MatSlideToggleModule } from '@angular/material';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -17,16 +15,8 @@ import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepicke
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatAutocompleteModule,
-     MatButtonModule,
-     MatCheckboxModule,
-     MatDatepickerModule,
-     MatFormFieldModule,
-     MatInputModule,
-     MatRadioModule,
-     MatSelectModule,
-     MatSliderModule,
-     MatSlideToggleModule
+    MatBadgeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
