@@ -1,6 +1,8 @@
-<button mat-raised-button color="primary"
+<!-- <button mat-raised-button color="primary"
     matBadge="8" matBadgePosition="before" matBadgeColor="accent">
   Action
-</button>
+</button> -->
 
-<app-header></app-header>
+<app-header *ngIf="authService.isLoggedIn | async"></app-header>
+
+<app-login></app-login>

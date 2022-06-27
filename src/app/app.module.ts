@@ -7,17 +7,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatBadgeModule} from '@angular/material/badge';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatBadgeModule,
-    CoreModule
+    CoreModule,
+    AuthModule
 
   ],
   providers: [],
