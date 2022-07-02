@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './auth/components/login/interceptor/auth.interceptor';
 import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,10 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatBadgeModule} from '@angular/material/badge';
 import { AuthModule } from './auth/auth.module';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,10 +23,15 @@ import { AuthModule } from './auth/auth.module';
     BrowserAnimationsModule,
     MatBadgeModule,
     CoreModule,
-    AuthModule
+    AuthModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [ /*{provide: HTTP_INTERCEPTORS,
+                useClass: AuthInterceptor,
+                multi: true
+               }*/
+             ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

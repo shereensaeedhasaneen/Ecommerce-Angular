@@ -10,10 +10,13 @@ export class AuthServiceService {
 
   private _isLoggedIn = new BehaviorSubject<boolean>(false); // private
   isLoggedIn = this._isLoggedIn.asObservable(); // public
+
+  get Token() : any{
+    return localStorage.getItem('token')
+  }
   constructor(private http : HttpClient) {
     // لو فيه اكسبير ديت للتوكن اتشيك عليه هنا الاول قبل ما اعمل ست للفاليو
-      const token = localStorage.getItem('token')
-      this._isLoggedIn.next(!!token)
+      this._isLoggedIn.next(!!this.Token)
    }
 
   login(user:User){
@@ -23,6 +26,7 @@ export class AuthServiceService {
         }).pipe(
             tap((res:any) =>{
             console.log(res.token)  // كدا جبنا ال token
+            console.log(JSON.parse(atob(res.token.split(".")[1])))
             this._isLoggedIn.next(true)
             localStorage.setItem('token' , res.token)
             })
